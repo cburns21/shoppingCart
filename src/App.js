@@ -28,7 +28,7 @@ class App extends Component {
   addItem = (event) => {
     event.preventDefault()
   }
-    //todo add item to cart list
+    
 
   render() {
     const cartItemsList =   

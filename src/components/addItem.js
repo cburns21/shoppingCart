@@ -26,7 +26,7 @@ const AddItem = (props) => {
             <option>Apple</option>
             <option>Banana</option>
             <option>Potato</option>
-            {props.products.map(product => <option key={product.id} value={product.id}>{product.name}</option>)}
+            {this.props.products.map(product => <option key={product.id} value={product.id}>{product.name}</option>)}
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
