@@ -21,13 +21,21 @@ class App extends Component {
         { id: 47, name: 'Ergonomic Bronze Lamp', priceInCents: 40000 },
         { id: 48, name: 'Awesome Leather Shoes', priceInCents: 3990 },
       ],
-      cartList: []
+      
+      cartItemsList: [],
+      quantity: 0,
+      newItemName: '',
+      price: 0,
     }
   }
   
   addItem = (event) => {
     event.preventDefault()
-    let newItem = []
+    let newItem = {
+      product: {
+        
+      }
+    }
   }
     
   updateQuantity = (event) => {
@@ -37,22 +45,38 @@ class App extends Component {
     })
   }
 
+  updateName = (event) => {
+    console.log(event.target.value)
+    this.setState({
+      newItemName: event.target.value
+    })
+  }
+
+  updatePrice = (event) => {
+    console.log(event.target.value)
+    this.setState({
+      price: event.target.value
+    })
+  }
+
   render() {
-    const cartItemsList =   
-      [
-        { id: 1, product: { id: 40, name: 'Mediocre Iron Watch', priceInCents: 3.99 }, quantity: 1 },
-        { id: 2, product: { id: 41, name: 'Heavy Duty Concrete Plate', priceInCents: 4.99 }, quantity: 2 },
-        { id: 3, product: { id: 42, name: 'Intelligent Paper Knife', priceInCents: 19.99 }, quantity: 1 },
-      ]
+    // const cartItemsList =   
+    //   [
+    //     { id: 1, product: { id: 40, name: 'Mediocre Iron Watch', priceInCents: 3.99 }, quantity: 1 },
+    //     { id: 2, product: { id: 41, name: 'Heavy Duty Concrete Plate', priceInCents: 4.99 }, quantity: 2 },
+    //     { id: 3, product: { id: 42, name: 'Intelligent Paper Knife', priceInCents: 19.99 }, quantity: 1 },
+    //   ]
 
     return (
       <div>
         <Header/>
         <CartItems
-          cartItemsList = {cartItemsList}/>
+          cartItemsList = {this.state.cartItemsList}/>
         <AddItem 
         products={this.state.products} 
         addItem={this.addItem}
+        updateName= {this.updateName}
+        updateprice = {this.updatePrice}
         update={this.updateQuantity}/>
         <Footer
           copyright={ 2016}/> 
