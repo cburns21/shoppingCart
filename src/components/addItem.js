@@ -17,7 +17,7 @@ const AddItem = (props) => {
         <form onSubmit={props.addItem}>  
         <div class="form-group">
             <label for="exampleInputEmail1">Quantity</label>
-            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Quantity"/>
+            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Quantity" onChange= {props.update}/>
             
         </div>
         <div class="form-group">

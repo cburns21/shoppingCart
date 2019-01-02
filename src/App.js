@@ -30,6 +30,12 @@ class App extends Component {
     let newItem = []
   }
     
+  updateQuantity = (event) => {
+    console.log(event.target.value)
+    this.setState({
+      quantity: event.target.value
+    })
+  }
 
   render() {
     const cartItemsList =   
@@ -46,7 +52,8 @@ class App extends Component {
           cartItemsList = {cartItemsList}/>
         <AddItem 
         products={this.state.products} 
-        addItem={this.addItem}/>
+        addItem={this.addItem}
+        update={this.updateQuantity}/>
         <Footer
           copyright={ 2016}/> 
          
