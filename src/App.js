@@ -27,6 +27,7 @@ class App extends Component {
   
   addItem = (event) => {
     event.preventDefault()
+    let newItem = []
   }
     
 
@@ -43,8 +44,9 @@ class App extends Component {
         <Header/>
         <CartItems
           cartItemsList = {cartItemsList}/>
-        <AddItem addItem={this.addItem}/> 
-        <AddItem products={this.state.products} addItem={this.addItem}/>
+        <AddItem 
+        products={this.state.products} 
+        addItem={this.addItem}/>
         <Footer
           copyright={ 2016}/> 
          
