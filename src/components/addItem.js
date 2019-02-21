@@ -1,42 +1,30 @@
-import React from 'react'; 
+import React, { Component } from 'react'
+class AddItem extends Component {
 
-const AddItem = (props) => {
-    console.log(props)
-
-    // let newItem = {
-    //     product: {
-    //       id: 40,
-    //       name: 'Mediocre Iron Watch',
-    //       priceInCents: 399
-    //     },
-    //     quantity: 1
-    //   }
+   
+render() {
 
     return (
-        <div className="container">
-        <form onSubmit={props.addItem}>  
-        <div className="form-group">
-            <label for="exampleInputEmail1">Quantity</label>
-            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Quantity" onChange= {props.update}/>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Select</label>
-            <select onChange={props.updateName} class="form-control" id="exampleFormControlSelect1">
-            <option>
-                {/* {key= {idx}} */}
-            </option>
-            {props.products.map(product => <option key={product.id}>{product.name}</option>)}
-            </select>
-        </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit
-        </button>
+        <div className = "container">
+        <p>Total Price: ${this.props.total}</p>
+        <form onSubmit = {this.props.addItem}> 
+            <div className="form-group">
+                <div>
+                    <label>Quantity:</label>
+                    <br></br>
+                    <input onChange ={this.props.addQuantity}></input>
+                </div>   
+                <label htmlFor="sel1">Products:</label>
+                <select className="form-control" id="sel1" placeholder='items' onChange={this.props.addName}>
+                    {this.props.products.map(
+                        product => <option key={product.id} value={product.name}>{product.name}</option>)}
+                </select>
+                <br></br>
+                <input className="btn btn-primary" type="submit"  value="Submit" onClick={this.props.addItem}></input>  
+            </div>
         </form>
         </div>
-    );
-
+    ) 
+  }
 }
-
 export default AddItem
-
-
-
