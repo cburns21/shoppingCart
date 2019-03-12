@@ -12,10 +12,10 @@ render() {
                 <div>
                     <label>Quantity:</label>
                     <br></br>
-                    <input onChange ={this.props.addQuantity}></input>
+                    <input onChange ={this.props.updateQuantity}></input>
                 </div>   
                 <label htmlFor="sel1">Products:</label>
-                <select className="form-control" id="sel1" placeholder='items' onChange={this.props.addName}>
+                <select className="form-control" id="sel1" placeholder='items' onChange={this.props.updateName}>
                     {this.props.products.map(
                         product => <option key={product.id} value={product.name}>{product.name}</option>)}
                 </select>

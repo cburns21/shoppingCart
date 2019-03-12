@@ -80,9 +80,9 @@ class App extends Component {
           products={this.state.products} 
           updateQuantity={this.updateQuantity} 
           total={this.state.total}
-          updateName={this.upateName}  
+          updateName={this.updateName}  
           addItem={this.addItem} />
-        <Footer copyright={'© 2018'} />     
+        <Footer copyright={' 2018'} />     
       </div>
     ) 
   }
